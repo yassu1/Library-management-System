@@ -21,3 +21,11 @@ class UPI(Payment):
 
     def pay(self,amount):
         print(f"Paid {amount} using UPI (Fee. {self.transcation_fee})")
+    
+class Card(Payment):
+    @property
+    def transcation_fee(self):
+        return 0.2
+    
+    def pay(self,amount):
+        print(f"amount {amount} paid using Card (fee . {self.transaction_fee})")
