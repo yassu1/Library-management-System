@@ -1,4 +1,4 @@
-from .user import User,preiumUser
+from .user import User,PremiumUser
 from .Payments import Payment
 
 class Library:
@@ -44,7 +44,7 @@ class Library:
     def register_user(self,user,payment_method: Payment):
         fee_to_pay = self._fee_per_month
 
-        if isinstance(user,preiumUser):
+        if isinstance(user,PremiumUser):
             fee_to_pay = user.get_discount_fee(self._fee_per_month)
         
         payment_method.pay(fee_to_pay)
